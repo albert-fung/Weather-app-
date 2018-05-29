@@ -1,5 +1,6 @@
 $(document).ready(function()
 {
+  //Google geocode API
    var geocoder = new google.maps.Geocoder();
   $("#geocode").click(function(){
 
@@ -13,6 +14,7 @@ $(document).ready(function()
       lng = lng.toFixed(3);
       var address = results[0].formatted_address;
 
+      //For testing outputs of google geocode
       var para = document.createElement("p");
       var node = document.createTextNode("The place searched "+address);
       var element = document.getElementById("results");
@@ -23,7 +25,18 @@ $(document).ready(function()
       para.appendChild(node);
       element.appendChild(para);
 
-
+      //Dark sky API portion
+      //key obtained by local js file only obtainable for
+      var key = api_key;
+      $.getJSON("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+key+"/"+lat+","+lng , function(forecast) {
+          console.log(forecast);
+      });
+    }
+    else {
+      var para = document.createElement("p");
+      var node = document.createTextNode("Sorry servers are down for now. Please try again later.");
+      var element = document.getElementById("Results");
+      element.appendChild(node);
     }
     });
   });
