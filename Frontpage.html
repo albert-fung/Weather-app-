@@ -7,17 +7,26 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-Qu-HFwxuyVx0WGG-8GZjBZaeE1Jgt3o&callback=initMap"></script>
     <!--Holds api key for dark sky (Only available on local machine) -->
     <script src="api_key.js"></script>
+    <!--Grabbing data from databases-->
+    <script src="RetrievingData.js"></script>
+    <!--Formatting database information -->
+    <script src="Dataoutput.js"></script>
 
-    <script src="js.js"></script>
-    
     <meta charset="utf-8">
     <title>Weather app</title>
   </head>
   <body>
-    <input id="location" type="text" name="location" placeholder="Enter city,town,country,ext">
-    <button id="geocode" type="button" name="button">Geocode</button>
-    <div id="results">
+    <form class="" action="#" method="post">
+      <input id="location" type="text" name="location" placeholder="Enter city,town,country,ext">
+      <button id="geocode" type="submit" name="button">Geocode</button>
+      <label for="hourly">Hourly</label>
+      <input id="hourly"type="radio" name="Weather_Timespan" value="Hourly">
+      <label for="Daily">Daily</label>
+      <input id="daily"type="radio" name="Weather_Timespan" value="Daily">
 
-    </div>
+    </form>
+
+    <div id="info"></div>
+    <div id=results></div>
   </body>
 </html>
