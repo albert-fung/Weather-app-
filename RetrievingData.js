@@ -2,8 +2,9 @@ $(document).ready(function()
 {
   //Google geocode API
    var geocoder = new google.maps.Geocoder();
+   var forecast;
   $("#geocode").click(function(){
-    event.preventDefault();
+  event.preventDefault();
   var location = document.getElementById("location").value;
   geocoder.geocode({'address':location},function (results,status)
     {if (status =='OK')
@@ -20,9 +21,10 @@ $(document).ready(function()
       //Dark sky API portion
       //key obtained by local js file only obtainable for me
       var key = api_key;
-      $.getJSON("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+key+"/"+lat+","+lng+"?units=si", function(forecast) {
-        console.log(forecast);
-        weatheroutputweekly(forecast);
+      $.getJSON("https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/"+key+"/"+lat+","+lng+"?units=si", function(result) {
+        forecast=result;
+      //TODO make an if statement to choose between daily or weekly -- For now only weekly is applied
+      weatheroutputweekly(forecast);
       });
     }
     else {

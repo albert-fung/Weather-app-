@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <!--Formating templates-->
+    <link rel="templates" href="">
+    <!--Bootstrap CDN -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!--Jquery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--Google maps geocode API-->
@@ -11,6 +17,8 @@
     <script src="RetrievingData.js"></script>
     <!--Formatting database information -->
     <script src="Dataoutput.js"></script>
+    <!--Creating weekly template-->
+    <link rel="template" href="templates\weekly_template">
 
     <meta charset="utf-8">
     <title>Weather app</title>
@@ -23,10 +31,10 @@
       <input id="hourly"type="radio" name="Weather_Timespan" value="Hourly">
       <label for="Daily">Daily</label>
       <input id="daily"type="radio" name="Weather_Timespan" value="Daily">
-
     </form>
 
     <div id="info"></div>
-    <div id=results></div>
+    <div id=results>
+    </div>
   </body>
 </html>
