@@ -3,9 +3,10 @@ $(document).ready(function()
   //Google geocode API
    var geocoder = new google.maps.Geocoder();
    var forecast;
-  $("#geocode").click(function(){
-  event.preventDefault();
-  var location = document.getElementById("location").value;
+   $("#searchbar").submit(function(){
+     $("#result").empty();
+     var location = document.getElementById("location").value;
+
   geocoder.geocode({'address':location},function (results,status)
     {if (status =='OK')
     {
@@ -16,7 +17,7 @@ $(document).ready(function()
       lng = lng.toFixed(3);
       var address = results[0].formatted_address;
 
-      inputinfo(lat,lng,address);
+
 
       //Dark sky API portion
       //key obtained by local js file only obtainable for me
@@ -25,6 +26,7 @@ $(document).ready(function()
         forecast=result;
       //TODO make an if statement to choose between daily or weekly -- For now only weekly is applied
       weatheroutputweekly(forecast);
+      inputinfo(lat,lng,address);
       });
     }
     else {
@@ -34,5 +36,6 @@ $(document).ready(function()
       element.appendChild(node);
     }
     });
+    return false;
   });
 });

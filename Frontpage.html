@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <!--Formating templates-->
-    <link rel="templates" href="">
     <!--Bootstrap CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -10,6 +8,7 @@
     <!--Jquery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--Google maps geocode API-->
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-Qu-HFwxuyVx0WGG-8GZjBZaeE1Jgt3o&callback=initMap"></script>
     <!--Holds api key for dark sky (Only available on local machine) -->
     <script src="api_key.js"></script>
@@ -17,24 +16,41 @@
     <script src="RetrievingData.js"></script>
     <!--Formatting database information -->
     <script src="Dataoutput.js"></script>
+
     <!--Creating weekly template-->
     <link rel="template" href="templates\weekly_template">
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:700|Slabo+27px" rel="stylesheet">
 
+    <link rel="stylesheet" href="style.css">
     <meta charset="utf-8">
     <title>Weather app</title>
   </head>
   <body>
-    <form class="" action="#" method="post">
-      <input id="location" type="text" name="location" placeholder="Enter city,town,country,ext">
-      <button id="geocode" type="submit" name="button">Geocode</button>
-      <label for="hourly">Hourly</label>
-      <input id="hourly"type="radio" name="Weather_Timespan" value="Hourly">
-      <label for="Daily">Daily</label>
-      <input id="daily"type="radio" name="Weather_Timespan" value="Daily">
-    </form>
+
+      <div id="wrapper" class="row">
+        <div class="col-md-2">
+          <div id="title_wrapper">
+            <div id="title">
+              Simple Weather
+            </div>
+          </div>
+        </div>
+        <div id="searchbar_col" class="col-md-10">
+          <form id="searchbar_form">
+            <input id="location_input" type="text" autocomplete="off">
+              <span>
+                <button id="geocode" class="btn btn-default" type="button">
+                  <div class="glyphicon glyphicon-search">
+                </div>
+              </button>
+              </span>
+          </form>
+        </div>
+      </div>
+
 
     <div id="info"></div>
-    <div id=results>
-    </div>
+    <div id=results></div>
   </body>
 </html>

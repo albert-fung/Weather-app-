@@ -1,14 +1,17 @@
 function inputinfo(lat,lng,address){
+  //clear info div
+    $('#info').empty();
   //For testing outputs of google geocode
-  var node = document.createTextNode("The place searched "+address);
+  var node = document.createTextNode(address);
   var element = document.getElementById("info");
-  element.appendChild(node);
-  node = document.createTextNode("The latitude is "+lat+" and the longitude is "+lng);
   element.appendChild(node);
 }
 
 function weatheroutputweekly(forecast)
 {
+  //clear results
+  $('#results').empty();
+
   //creating weekly template
   $('#results').load("templates/weekly_template.html",function(){
     var all_weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
@@ -26,8 +29,21 @@ function weatheroutputweekly(forecast)
       //TODO create loop to gather all data, maybe use bootstrap grids for formatting
       console.log("high: "+hightemp+" Low: "+lowtemp+" icon: "+icon+" Weekday: "+weekday);
 
+      hightemp=Math.round(hightemp);
+      lowtemp=Math.round(lowtemp);
       var col = document.getElementById('col-'+i);
       var list = document.createElement('ul');
+
+      list_element = document.createElement('li');
+      node = document.createTextNode("Weekday: "+weekday);
+      list_element.appendChild(node);
+      list.appendChild(list_element);
+
+      list_element = document.createElement('li');
+      node = document.createTextNode("Icon: "+icon);
+      list_element.appendChild(node);
+      list.appendChild(list_element);
+
 
       var list_element = document.createElement('li');
       var node = document.createTextNode("high: "+hightemp);
@@ -39,16 +55,6 @@ function weatheroutputweekly(forecast)
       list_element.appendChild(node);
       list.appendChild(list_element);
 
-      list_element = document.createElement('li');
-      node = document.createTextNode("Icon: "+icon);
-      list_element.appendChild(node);
-      list.appendChild(list_element);
-
-      list_element = document.createElement('li');
-      node = document.createTextNode("Weekday: "+weekday);
-      list_element.appendChild(node);
-      list.appendChild(list_element);
-      console.log(list);
 
       col.appendChild(list);
     }

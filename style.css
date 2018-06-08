@@ -1,4 +1,61 @@
-#innerlist
+/*
+TITLE CSS
+*/
+#title_wrapper
 {
-  display:inline;
+  width:20%;
+  padding-left: 2vw;
+  margin-right: 0;
+}
+#title
+{
+  font-family: 'calibri-light', serif;
+  color: black;
+  font-size:4rem;
+  padding: 2vh 0 2vh 0;
+  text-align: center;
+}
+.wrapper
+{
+  padding-right: 5vw;
+}
+.row
+{
+  margin-right: 0;
+}
+#searchbar_col
+{
+  top:60px;
+}
+@media screen and  (max-width: 992px)
+{
+  #title_wrapper
+  {
+    margin: 2em auto;
+  }
+  #searchbar_col
+  {
+    top: 0;
+    text-align: center;
+  }
+}
+#location_input:focus
+{
+  background-color: #d8d8d8;
+  width: 50%;
+}
+#location_input,#geocode
+{
+  background-color: transparent;
+  border:0;
+  outline:none;
+  outline-offset: 0;
+  transition-property: all;
+  transition-duration: .8s;
+  transition-timing-function: linear;
+}
+#location_input
+{
+  width: 10%;
+  border-bottom: solid black 1px;
 }
