@@ -3,10 +3,11 @@ $(document).ready(function()
   //Google geocode API
    var geocoder = new google.maps.Geocoder();
    var forecast;
-   $("#searchbar_form").submit(function(){
+   $("#searchbar_form").submit(function(e){
+      e.preventDefault();
      console.log("hello");
      $("#result").empty();
-     var location = document.getElementById("location").value;
+     var location = document.getElementById("location_input").value;
 
   geocoder.geocode({'address':location},function (results,status)
     {if (status =='OK')

@@ -26,14 +26,16 @@ function weatheroutputweekly(forecast)
       var weekday_number= new Date(time*1000);
       weekday_number= weekday_number.getDay();
       var weekday = all_weekday[weekday_number];
-      //TODO create loop to gather all data, maybe use bootstrap grids for formatting
       console.log("high: "+hightemp+" Low: "+lowtemp+" icon: "+icon+" Weekday: "+weekday);
 
+      //Putting data in their respective column
       hightemp=Math.round(hightemp);
       lowtemp=Math.round(lowtemp);
+      //column number
       var col = document.getElementById('col-'+i);
       var list = document.createElement('ul');
 
+      //Putting data in a list elements to put into list 
       list_element = document.createElement('li');
       node = document.createTextNode("Weekday: "+weekday);
       list_element.appendChild(node);
