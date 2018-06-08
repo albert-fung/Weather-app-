@@ -31,18 +31,25 @@ TITLE CSS
 {
   #title_wrapper
   {
-    margin: 2em auto;
+    margin: 0 auto;
+  }
+  #title
+  {
+      font-size:100px;
+      text-align: left;
+      transform: translate(-50%,0);
   }
   #searchbar_col
   {
-    top: 0;
     text-align: center;
+    top: 0;
   }
 }
 #location_input:focus
 {
-  background-color: #d8d8d8;
+  background-color: #E5E5E5;
   width: 50%;
+  border-bottom: solid #E5E5E5 1px;
 }
 #location_input,#geocode
 {
@@ -56,6 +63,8 @@ TITLE CSS
 }
 #location_input
 {
+  height: 4rem;
+  font-size: 4rem;
   width: 10%;
   border-bottom: solid black 1px;
 }

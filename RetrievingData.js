@@ -3,7 +3,8 @@ $(document).ready(function()
   //Google geocode API
    var geocoder = new google.maps.Geocoder();
    var forecast;
-   $("#searchbar").submit(function(){
+   $("#searchbar_form").submit(function(){
+     console.log("hello");
      $("#result").empty();
      var location = document.getElementById("location").value;
 
