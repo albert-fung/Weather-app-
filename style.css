@@ -15,36 +15,12 @@ TITLE CSS
   padding: 2vh 0 2vh 0;
   text-align: center;
 }
-.wrapper
-{
-  padding-right: 5vw;
-}
-.row
-{
-  margin-right: 0;
-}
+
 #searchbar_col
 {
   top:60px;
 }
-@media screen and  (max-width: 992px)
-{
-  #title_wrapper
-  {
-    margin: 0 auto;
-  }
-  #title
-  {
-      font-size:100px;
-      text-align: left;
-      transform: translate(-50%,0);
-  }
-  #searchbar_col
-  {
-    text-align: center;
-    top: 0;
-  }
-}
+
 #location_input:focus
 {
   background-color: #E5E5E5;
@@ -72,4 +48,33 @@ TITLE CSS
 {
   font-size: 2rem;
   padding-top: 0 !important;
+}
+
+.wrapper
+{
+  padding-right: 5vw;
+}
+.row
+{
+  margin-right: 0;
+}
+
+
+@media screen and  (max-width: 991px)
+{
+  #title_wrapper
+  {
+    margin: 0 auto;
+  }
+  #title
+  {
+      font-size:100px;
+      text-align: left;
+      transform: translate(-50%,0);
+  }
+  #searchbar_col
+  {
+    text-align: center;
+    top: 0;
+  }
 }

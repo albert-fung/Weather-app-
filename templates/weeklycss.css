@@ -1,0 +1,41 @@
+.weekly_wrapper
+{
+  padding:0 10vw 0 10vw;
+}
+
+ol li
+{
+  list-style-type: none;
+}
+
+#right-col-top-row
+{
+ padding-bottom: 5vh;
+}
+
+#day
+{
+font-size: 3rem;
+}
+
+.wi {
+    font-size: 4vh;
+}
+@media screen and  (max-width: 992px)
+{
+  #right-col-top-row
+  {
+    padding-bottom: 0;
+  }
+
+  .weekly_wrapper
+  {
+      padding:0;
+  }
+
+  ol li
+  {
+    padding-bottom: 2vh;
+    display: inline;
+  }
+}

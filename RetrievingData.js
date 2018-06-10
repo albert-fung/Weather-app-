@@ -5,7 +5,6 @@ $(document).ready(function()
    var forecast;
    $("#searchbar_form").submit(function(e){
       e.preventDefault();
-     console.log("hello");
      $("#result").empty();
      var location = document.getElementById("location_input").value;
 
@@ -19,7 +18,7 @@ $(document).ready(function()
       lng = lng.toFixed(3);
       var address = results[0].formatted_address;
 
-
+      console.log("hello");
 
       //Dark sky API portion
       //key obtained by local js file only obtainable for me
