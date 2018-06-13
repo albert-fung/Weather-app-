@@ -1,6 +1,11 @@
+#results
+{
+  height: 100%;
+}
 .weekly_wrapper
 {
-  padding:0 10vw 0 10vw;
+
+  padding:5vh 10vw 0 10vw;
 }
 
 ol li
@@ -18,8 +23,20 @@ ol li
 font-size: 3rem;
 }
 
+#left-col ,#right-col
+{
+  height: 300px;
+}
+.col-md-4 ol
+{
+background-color: #48dbfb;
+
+}
+
+
 .wi {
     font-size: 4vh;
+    padding-top: 1vh;
 }
 @media screen and  (max-width: 992px)
 {
@@ -35,6 +52,7 @@ font-size: 3rem;
 
   ol li
   {
+    padding-left: 0;
     padding-bottom: 2vh;
     display: inline;
   }

@@ -5,6 +5,7 @@ function inputinfo(lat,lng,address){
   var node = document.createTextNode(address);
   var element = document.getElementById("info");
   element.appendChild(node);
+  $("#info").addClass("underline");
 }
 
 function weatheroutputweekly(forecast)
@@ -15,12 +16,11 @@ function weatheroutputweekly(forecast)
   //creating weekly template
   $('#results').load("templates/weekly_template.html",function()
   {
-    var all_weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    var all_weekday = ["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
     for(i = 0; i < 7; i++)
     {
       var hightemp = forecast.daily.data[i].temperatureHigh;
       var lowtemp = forecast.daily.data[i].temperatureLow;
-
       var time = forecast.daily.data[i].time;
 
       //converting unix time to day of the week
@@ -28,7 +28,7 @@ function weatheroutputweekly(forecast)
       console.log(weekday_number);
       weekday_number= weekday_number.getDay();
       var weekday = all_weekday[weekday_number];
-      console.log("high: "+hightemp+" Low: "+lowtemp+" icon: "+icon+" Weekday: "+weekday);
+      console.log("high: "+hightemp+" Low: "+lowtemp+" Weekday: "+weekday);
 
       //Putting data in their respective column
       hightemp=Math.round(hightemp);
@@ -59,14 +59,14 @@ function weatheroutputweekly(forecast)
       //High temp
       list_element = document.createElement('li');
       list_element.id="high_temp";
-      var node = document.createTextNode("high: "+hightemp);
+      var node = document.createTextNode("high: "+hightemp+"℃");
       list_element.appendChild(node);
       list.appendChild(list_element);
 
       //Low temp
       list_element = document.createElement('li');
       list_element.id="low_temp";
-      node = document.createTextNode("Low: "+lowtemp);
+      node = document.createTextNode("Low: "+lowtemp+"℃");
       list_element.appendChild(node);
       list.appendChild(list_element);
 
@@ -76,34 +76,64 @@ function weatheroutputweekly(forecast)
     for (var x=0 ; x<7 ; x++)
     {
       var icon = forecast.daily.data[x].icon;
-      icon=icon_img(icon);
-      var id = String("#weather_icon_"+x);
+      var id = "#weather_icon_"+x;
+      var background_id = '#col-'+x;
+      icon=icon_img(icon,id, background_id);
+
+
       $(id).addClass("wi");
       $(id).addClass("wi-"+icon);
     }
   });
 }
 
-function icon_img(icon)
+function icon_img(icon,id, background_id)
 {
 switch (icon) {
   case "clear-day":
+  //orange-yellow
+  $(background_id).css("background-color","#ff9f43");
     return "day-sunny"
     break;
   case "clear-night" :
+  //purple
+  $( background_id).css("background-color","#5f27cd");
     return "night-clear"
     break;
   case "wind":
+  //lightgrey
+  $( background_id).css("background-color","#8395a7");
     return "strong-wind"
     break;
   case "partly-cloudy-day":
+  //yellowy-orange
+    $( background_id).css("background-color","#feca57");
     return "day-cloudy"
     break;
   case "partly-cloudy-night":
+  //dark purple
+    $( background_id).css("background-color","#341f97");
     return "night-cloudy"
     break;
-
-  default: return icon
+  case "fog":
+  //green
+    $( background_id).css("background-color","#1dd1a1");
+    return icon
+      break;
+  case "snow":
+  //white
+  $( background_id).css("background-color","white");
+    return icon
+    break;
+    case "snow":
+    //white
+    $( background_id).css("background-color","white");
+      return icon
+      break;
+  default:
+  //jade
+    $( background_id).css("background-color","#54a0ff");
+  return icon
    /*remapping weather_icon.io and darksky.api(forecast.io)
   No need for re-mapping:fog,sleet,snow,rain,hail,thunderstorm,tornado*/
 }

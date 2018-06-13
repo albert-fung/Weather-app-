@@ -1,3 +1,10 @@
+html,body
+{
+  height: 100%;
+  width: 100%;
+  background: #171819;  
+}
+
 /*
 TITLE CSS
 */
@@ -10,7 +17,7 @@ TITLE CSS
 #title
 {
   font-family: 'calibri-light', serif;
-  color: black;
+  color: white;
   font-size:4rem;
   padding: 2vh 0 2vh 0;
   text-align: center;
@@ -19,6 +26,10 @@ TITLE CSS
 #searchbar_col
 {
   top:60px;
+}
+.glyphicon
+{
+  color:white;
 }
 
 #location_input:focus
@@ -42,7 +53,7 @@ TITLE CSS
   height: 3rem;
   font-size: 2.5rem;
   width: 10%;
-  border-bottom: solid black 1px;
+  border-bottom: solid white 1px;
 }
 #geocode
 {
@@ -59,7 +70,14 @@ TITLE CSS
   margin-right: 0;
 }
 
-
+.underline
+{
+  margin-left: 3vw;
+  margin-bottom:10vh;
+  border-bottom: 5px solid white;
+  font-size: 4rem;
+  display: inline-block;
+}
 @media screen and  (max-width: 991px)
 {
   #title_wrapper
