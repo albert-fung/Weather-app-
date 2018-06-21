@@ -59,7 +59,7 @@ function weatheroutputweekly(forecast)
       //High temp
       list_element = document.createElement('li');
       list_element.id="high_temp";
-      var node = document.createTextNode("high: "+hightemp+"℃");
+      var node = document.createTextNode("High: "+hightemp+"℃");
       list_element.appendChild(node);
       list.appendChild(list_element);
 

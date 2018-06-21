@@ -2,7 +2,6 @@ html,body
 {
   height: 100%;
   width: 100%;
-  background: #171819;  
 }
 
 /*
@@ -17,7 +16,6 @@ TITLE CSS
 #title
 {
   font-family: 'calibri-light', serif;
-  color: white;
   font-size:4rem;
   padding: 2vh 0 2vh 0;
   text-align: center;
@@ -27,13 +25,10 @@ TITLE CSS
 {
   top:60px;
 }
-.glyphicon
-{
-  color:white;
-}
 
 #location_input:focus
 {
+  color: black;
   background-color: #E5E5E5;
   width: 50%;
   border-bottom: solid #E5E5E5 1px;
@@ -53,7 +48,7 @@ TITLE CSS
   height: 3rem;
   font-size: 2.5rem;
   width: 10%;
-  border-bottom: solid white 1px;
+  border-bottom: solid black 1px;
 }
 #geocode
 {
@@ -69,12 +64,15 @@ TITLE CSS
 {
   margin-right: 0;
 }
-
+#info
+{
+  font-family: 'calibri-light', serif;
+}
 .underline
 {
   margin-left: 3vw;
-  margin-bottom:10vh;
-  border-bottom: 5px solid white;
+  margin-bottom:5vh;
+  border-bottom: 3px solid black;
   font-size: 4rem;
   display: inline-block;
 }
