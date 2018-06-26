@@ -1,6 +1,6 @@
 function inputinfo(lat,lng,address){
   //clear info div
-    $('#info').empty();
+
   //For testing outputs of google geocode
   var node = document.createTextNode(address);
   var element = document.getElementById("info");
@@ -10,9 +10,7 @@ function inputinfo(lat,lng,address){
 
 function weatheroutputweekly(forecast)
 {
-  //clear results
-  $('#results').empty();
-
+  $("#results").removeClass("loader");
   //creating weekly template
   $('#results').load("templates/weekly_template.html",function()
   {
@@ -70,7 +68,10 @@ function weatheroutputweekly(forecast)
       list_element.appendChild(node);
       list.appendChild(list_element);
 
+
       col.appendChild(list);
+      $(col).addClass("animated fadeInLeft");
+
     }
 
     for (var x=0 ; x<7 ; x++)

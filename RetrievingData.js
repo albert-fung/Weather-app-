@@ -5,8 +5,11 @@ $(document).ready(function()
    var forecast;
    $("#searchbar_form").submit(function(e){
       e.preventDefault();
-     $("#result").empty();
-     var location = document.getElementById("location_input").value;
+      $("#results").empty();
+      $('#info').empty();
+      //add loading spinner
+      $("#results").addClass("loader");
+      var location = document.getElementById("location_input").value;
 
   geocoder.geocode({'address':location},function (results,status)
     {if (status =='OK')
@@ -18,7 +21,7 @@ $(document).ready(function()
       lng = lng.toFixed(3);
       var address = results[0].formatted_address;
 
-      console.log("hello");
+
 
       //Dark sky API portion
       //key obtained by local js file only obtainable for me
@@ -31,6 +34,8 @@ $(document).ready(function()
       });
     }
     else {
+      $('#info').empty();
+      $('#results').empty();
       var para = document.createElement("p");
       var node = document.createTextNode("Sorry servers are either down or you did not input correct information. Please try again later.");
       var element = document.getElementById("results");

@@ -1,6 +1,6 @@
 #results
 {
-  height:60%;
+  height:65%;
   object-position: center;
 }
 .weekly_wrapper
@@ -15,6 +15,7 @@ ol
 /*Text data for each day*/
 ol li
 {
+  font-weight: bold;
   list-style-type: none;
   color: white;
   text-shadow: .4px .4px black;
@@ -49,7 +50,7 @@ ol ul
 /*Week day title*/
 #day
 {
-font-size: 4vh;
+  font-size: 4vh;
 }
 
 .col-md-4 ol

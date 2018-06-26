@@ -25,10 +25,14 @@
     <!-- Font awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
+    <!--bootstrap animations -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/css/mdb.min.css" rel="stylesheet">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.4/js/mdb.min.js"></script>
     <!--Creating weekly template-->
     <link rel="template" href="templates\weekly_template">
 
     <link rel="stylesheet" href="style.css">
+
     <meta charset="utf-8">
     <title>Weather app</title>
   </head>
@@ -43,9 +47,9 @@
         </div>
         <div id="searchbar_col" class="col-md-10">
           <form class="d-flex align-items-center h-100" id="searchbar_form">
-            <input id="location_input" type="text" autocomplete="off" autofocus>
+            <input id="location_input" type="text" autocomplete="off" spellcheck="false" autofocus>
               <span>
-                <button id="geocode_button" class="btn btn-default" type="submit" onclick="this.blur();">
+                <button id="geocode_button" type="submit" onclick="this.blur();">
                   <i class="fas fa-search"></i>
                 </button>
               </span>
@@ -55,6 +59,6 @@
     <div id="info">
     </div>
     <div id=results></div>
-
+    <footer><a href="https://darksky.net/poweredby/">Powered by Dark Sky</a></footer>
   </body>
 </html>
