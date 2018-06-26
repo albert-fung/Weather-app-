@@ -2,9 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <!--Bootstrap CDN -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!--Jquery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--Google maps geocode API-->
@@ -12,15 +13,17 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-Qu-HFwxuyVx0WGG-8GZjBZaeE1Jgt3o&callback=initMap"></script>
     <!--Holds api key for dark sky (Only available on local machine) -->
     <script src="api_key.js"></script>
-    <!--Grabbing data from databases-->
+    <!--Grabbing data from api-->
     <script src="RetrievingData.js"></script>
-    <!--Formatting database information -->
+    <!--Formatting api information -->
     <script src="Dataoutput.js"></script>
 
-    <!--Fonts-->
+    <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:700|Slabo+27px" rel="stylesheet">
     <!--Weather icons-->
     <link href='css/weather-icons.min.css' rel='stylesheet' type='text/css'>
+    <!-- Font awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
 
     <!--Creating weekly template-->
     <link rel="template" href="templates\weekly_template">
@@ -30,7 +33,6 @@
     <title>Weather app</title>
   </head>
   <body>
-
       <div id="wrapper" class="row">
         <div class="col-md-2">
           <div id="title_wrapper">
@@ -40,13 +42,12 @@
           </div>
         </div>
         <div id="searchbar_col" class="col-md-10">
-          <form id="searchbar_form">
-            <input id="location_input" type="text" autocomplete="off">
+          <form class="d-flex align-items-center h-100" id="searchbar_form">
+            <input id="location_input" type="text" autocomplete="off" autofocus>
               <span>
-                <button id="geocode" class="btn btn-default" type="submit">
-                  <div class="glyphicon glyphicon-search">
-                </div>
-              </button>
+                <button id="geocode_button" class="btn btn-default" type="submit" onclick="this.blur();">
+                  <i class="fas fa-search"></i>
+                </button>
               </span>
           </form>
         </div>

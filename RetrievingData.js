@@ -32,8 +32,8 @@ $(document).ready(function()
     }
     else {
       var para = document.createElement("p");
-      var node = document.createTextNode("Sorry servers are down for now. Please try again later.");
-      var element = document.getElementById("Results");
+      var node = document.createTextNode("Sorry servers are either down or you did not input correct information. Please try again later.");
+      var element = document.getElementById("results");
       element.appendChild(node);
     }
     });

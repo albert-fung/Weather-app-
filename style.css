@@ -9,21 +9,15 @@ TITLE CSS
 */
 #title_wrapper
 {
-  width:20%;
   padding-left: 2vw;
   margin-right: 0;
 }
 #title
 {
   font-family: 'calibri-light', serif;
-  font-size:4rem;
+  font-size:2.5vw;
   padding: 2vh 0 2vh 0;
   text-align: center;
-}
-
-#searchbar_col
-{
-  top:60px;
 }
 
 #location_input:focus
@@ -33,7 +27,7 @@ TITLE CSS
   width: 50%;
   border-bottom: solid #E5E5E5 1px;
 }
-#location_input,#geocode
+#location_input,#geocode_button
 {
   background-color: transparent;
   border:0;
@@ -45,17 +39,14 @@ TITLE CSS
 }
 #location_input
 {
-  height: 3rem;
-  font-size: 2.5rem;
+  font-size: 2vw;
   width: 10%;
   border-bottom: solid black 1px;
 }
-#geocode
+#geocode_button
 {
-  font-size: 2rem;
-  padding-top: 0 !important;
+  font-size: 1.5rem;
 }
-
 .wrapper
 {
   padding-right: 5vw;
@@ -71,26 +62,19 @@ TITLE CSS
 .underline
 {
   margin-left: 3vw;
-  margin-bottom:5vh;
-  border-bottom: 3px solid black;
-  font-size: 4rem;
+  border-bottom: 2px solid black;
+   font-size: 3vw;
   display: inline-block;
 }
-@media screen and  (max-width: 991px)
+
+@media screen and  (max-width: 768px)
 {
-  #title_wrapper
-  {
-    margin: 0 auto;
-  }
   #title
   {
-      font-size:100px;
-      text-align: left;
-      transform: translate(-50%,0);
+    font-size: 100px;
   }
-  #searchbar_col
+  input
   {
-    text-align: center;
-    top: 0;
+    vertical-align: middle;
   }
 }

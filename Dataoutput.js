@@ -87,6 +87,7 @@ function weatheroutputweekly(forecast)
   });
 }
 
+/*Selecting weather icon and background color*/
 function icon_img(icon,id, background_id)
 {
 switch (icon) {

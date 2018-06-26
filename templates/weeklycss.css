@@ -22,10 +22,14 @@ ol li
 
 ol ul
 {
+    width: 70%;
+    margin: auto;
     padding-left:0 !important;
 }
 
-#right-col,#row , #right-col-top-row div ,#right-col-bottom-row div , #right-col-top-row div ol, #right-col-bottom-row div ol
+/*Sizing of right column display*/
+#right-col,#row , #right-col-top-row div ,#right-col-bottom-row div , #right-col-top-row div ol, #right-col-bottom-row div ol,
+#left-col ol , #left-col ul , #row
 {
   height:100%;
 }
@@ -45,7 +49,7 @@ ol ul
 /*Week day title*/
 #day
 {
-font-size: 3rem;
+font-size: 4vh;
 }
 
 .col-md-4 ol
@@ -56,9 +60,9 @@ font-size: 3rem;
 }
 
 /*Search icon*/
-.wi {
-    font-size: 4vh;
-    padding-top: 1vh;
+.wi::before {
+    font-size: 8vh;
+    padding-bottom: 1vh;
 }
 
 @media screen and  (max-width: 992px)
