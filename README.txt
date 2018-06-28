@@ -7,3 +7,5 @@ THIS APP IS INTENDED FOR PERSONAL PROJECT ONLY AND WILL NOT WORK ON ANY OTHER MA
 THIS HAS TO RUN ON A SERVER IN ORDER TO WORK CLIENT-SIDE ONLY WILL NOT WORK. 
 REFER TO:
 https://stackoverflow.com/questions/18586921/how-to-launch-html-using-chrome-at-allow-file-access-from-files-mode
+
+TODO:Make it responsive for smaller devices.

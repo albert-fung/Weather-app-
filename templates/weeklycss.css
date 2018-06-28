@@ -28,12 +28,13 @@ ol ul
     padding-left:0 !important;
 }
 
-/*Sizing of right column display*/
+/*Sizing of columns display*/
 #right-col,#row , #right-col-top-row div ,#right-col-bottom-row div , #right-col-top-row div ol, #right-col-bottom-row div ol,
 #left-col ol , #left-col ul , #row
 {
   height:100%;
 }
+/*Spacing between panels*/
 #right-col-top-row
 {
  padding-bottom: 1vh;
@@ -42,6 +43,8 @@ ol ul
 {
   padding-top: 1vh;
 }
+
+/*Splitting top and bottom of right column*/
 #right-col-top-row,#right-col-bottom-row
 {
   height:50%;
@@ -66,22 +69,11 @@ ol ul
     padding-bottom: 1vh;
 }
 
-@media screen and  (max-width: 992px)
+
+
+/*Hotfix for rain icon */
+.wi-rain
 {
-  #right-col-top-row
-  {
-    padding-bottom: 0;
-  }
-
-  .weekly_wrapper
-  {
-      padding:0;
-  }
-
-  ol li
-  {
-    padding-left: 0;
-    padding-bottom: 2vh;
-    display: inline;
-  }
+  top: -10px;
+position: relative;
 }

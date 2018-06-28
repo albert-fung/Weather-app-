@@ -7,13 +7,15 @@ $(document).ready(function()
       e.preventDefault();
       $("#results").empty();
       $('#info').empty();
-      //add loading spinner
-      $("#results").addClass("loader");
+
       var location = document.getElementById("location_input").value;
 
   geocoder.geocode({'address':location},function (results,status)
-    {if (status =='OK')
     {
+    if (status =='OK')
+    {
+      //add loading spinner
+      $("#results").addClass("loader");
       //retrieving data from google maps API (Latitude, longitude and full location name)
       var lat = results[0].geometry.location.lat();
       var lng = results[0].geometry.location.lng();
