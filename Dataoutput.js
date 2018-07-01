@@ -1,7 +1,5 @@
 function inputinfo(lat,lng,address){
-  //clear info div
-
-  //For testing outputs of google geocode
+  //Output aobut information of searched place
   var node = document.createTextNode(address);
   var element = document.getElementById("info");
   element.appendChild(node);
@@ -15,6 +13,9 @@ function weatheroutputweekly(forecast)
   $('#results').load("templates/weekly_template.html",function()
   {
     var all_weekday = ["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
+    //adding data for first weather panel
+
+    //adding data to each day panel
     for(i = 0; i < 7; i++)
     {
       var hightemp = forecast.daily.data[i].temperatureHigh;
@@ -22,11 +23,10 @@ function weatheroutputweekly(forecast)
       var time = forecast.daily.data[i].time;
 
       //converting unix time to day of the week
-      var weekday_number= new Date(time*1000);
-      console.log(weekday_number);
-      weekday_number= weekday_number.getDay();
-      var weekday = all_weekday[weekday_number];
-      console.log("high: "+hightemp+" Low: "+lowtemp+" Weekday: "+weekday);
+      var date= new Date(time*1000);
+      weekday_number= date.getDay();
+      month_date = date.getDate();
+      var date_output = all_weekday[weekday_number]+' '+ month_date;
 
       //Putting data in their respective column
       hightemp=Math.round(hightemp);
@@ -34,6 +34,9 @@ function weatheroutputweekly(forecast)
       //column number
       var col = document.getElementById('col-'+i);
       var list = document.createElement('ul');
+
+      //for textnodes
+      var node;
 
       //Putting data in a list elements to put into list
 
@@ -47,17 +50,14 @@ function weatheroutputweekly(forecast)
       //Day of the Week
       list_element = document.createElement('li');
       list_element.id="day";
-      node = document.createTextNode(weekday);
+      node = document.createTextNode(date_output);
       list_element.appendChild(node);
       list.appendChild(list_element);
-
-
-
 
       //High temp
       list_element = document.createElement('li');
       list_element.id="high_temp";
-      var node = document.createTextNode("High: "+hightemp+"℃");
+      node = document.createTextNode("High: "+hightemp+"℃");
       list_element.appendChild(node);
       list.appendChild(list_element);
 
@@ -68,12 +68,12 @@ function weatheroutputweekly(forecast)
       list_element.appendChild(node);
       list.appendChild(list_element);
 
-
       col.appendChild(list);
       $(col).addClass("animated fadeInLeft");
 
     }
 
+//adding icons to each panel
     for (var x=0 ; x<7 ; x++)
     {
       var icon = forecast.daily.data[x].icon;

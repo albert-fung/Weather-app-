@@ -13,14 +13,29 @@ ol
   border-radius: 25px;
 }
 /*Text data for each day*/
-ol li
+ul li
 {
   font-weight: bold;
   list-style-type: none;
   color: white;
-  text-shadow: .4px .4px black;
 }
-
+/*
+Week day title
+*/
+/*Larger panels*/
+#col-0 ul #day
+{
+  font-size: 8vh;
+}
+#col-0 ul #high_temp,#col-0 ul #low_temp
+{
+  font-size: 4vh;
+}
+  /*Smaller panels*/
+#day
+{
+  font-size: 4vh;
+}
 ol ul
 {
     width: 70%;
@@ -28,50 +43,42 @@ ol ul
     padding-left:0 !important;
 }
 
+
 /*Sizing of columns display*/
 #right-col,#row , #right-col-top-row div ,#right-col-bottom-row div , #right-col-top-row div ol, #right-col-bottom-row div ol,
 #left-col ol , #left-col ul , #row
 {
   height:100%;
 }
-/*Spacing between panels*/
+/*Spacing for large panel*/
+#col-0 ul
+{
+      padding-top: 20%;
+}
+/*Spacing between panels and heights*/
 #right-col-top-row
 {
+  height:50%;
  padding-bottom: 1vh;
 }
 #right-col-bottom-row
 {
+  height:50%;
   padding-top: 1vh;
 }
 
-/*Splitting top and bottom of right column*/
-#right-col-top-row,#right-col-bottom-row
-{
-  height:50%;
-}
 
-/*Week day title*/
-#day
-{
-  font-size: 4vh;
-}
-
-.col-md-4 ol
+.col ol , .col-md-4 ol
 {
   padding-left: 0;
   text-align: center;
-
 }
 
-/*Search icon*/
 .wi::before {
     font-size: 8vh;
     padding-bottom: 1vh;
 }
-
-
-
-/*Hotfix for rain icon */
+/*Hotfix for rain icon (Was too high compared to others)*/
 .wi-rain
 {
   top: -10px;
