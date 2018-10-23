@@ -3,25 +3,28 @@ html,body
   height: 100%;
   width: 100%;
 }
-
 /*
 TITLE CSS
 */
 #title_wrapper
-{
-  padding-left: 2vw;
+{ padding-left: 2vw;
   margin-right: 0;
 }
 #title
-{
-  font-family: 'calibri-light', serif;
+{ font-family: 'calibri-light', serif;
   font-size:2.5vw;
   padding: 2vh 0 2vh 0;
   text-align: center;
 }
+#searchbar_form
+{ position: absolute;
+  top: 30%;
+  width: 100%;
+
+
+}
 #location_input
-{
-  font-size: 2vw;
+{ font-size: 2vw;
   width: 20%;
   border: 0;
   outline: 0;
@@ -29,63 +32,62 @@ TITLE CSS
   border-bottom: 1px solid black;
 }
 #location_input:focus
-{
-  color: black;
+{ color: black;
   background-color: #E5E5E5;
   border-bottom: solid #E5E5E5 1px;
 }
 #geocode_button
-{
-  background-color: transparent;
+{ background-color: transparent;
   border:0;
   outline:none;
   outline-offset: 0;
   padding-left: 10px;
 }
 #location_input,#geocode_button
-{
-  transition-property: all;
+{ transition-property: all;
   transition-duration: .8s;
   transition-timing-function: linear;
 }
 
 #geocode_button
-{
-  font-size: 1.5rem;
-}
+{font-size: 1.5rem;}
 .wrapper
-{
-  padding-right: 5vw;
-}
+{padding-right: 5vw;}
 .row
-{
-  margin-right: 0;
-}
+{margin-right: 0;}
 
 /*Information about searched place*/
 #info
-{
-  font-family: 'calibri-light', serif;
-}
+{font-family: 'calibri-light', serif;}
 
 .underline
-{
-  margin-left: 3vw;
+{ margin-left: 3vw;
   border-bottom: 2px solid black;
-   font-size: 3vw;
+  font-size: 3vw;
   display: inline-block;
 }
 /*Footer design for 'powered by darksky API'*/
 footer
-{
-  position: absolute;
+{ position: absolute;
   bottom: 0;
-  right: 10px;
+  right:10px;
 }
-footer a , footer a:hover
-{
-  color: grey;
+
+@media only screen and (max-width: 767px) {
+#title{font-size: 40px;}
+#searchbar_form{text-align: center;}
+#location_input{font-size:22px;
+width:150px;}
+footer
+{ width: 100%;
+  background-color: rgb(161, 160, 160);
+  position: fixed;
+  bottom: 0;
+  right:0;
 }
+
+}
+
 
 /*Animation for loading spinner*/
 .loader {

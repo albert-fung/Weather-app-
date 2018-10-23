@@ -12,7 +12,7 @@ function weatheroutputweekly(forecast)
   //creating weekly template
   $('#results').load("templates/weekly_template.html",function()
   {
-    var all_weekday = ["Sun","Mon","Tues","Wed","Thurs","Fri","Sat"];
+    var all_weekday = ["Sun","Mon","Tues","Wed","Thur","Fri","Sat"];
     //adding data for first weather panel
 
     //adding data to each day panel
@@ -67,8 +67,10 @@ function weatheroutputweekly(forecast)
       node = document.createTextNode("Low: "+lowtemp+"℃");
       list_element.appendChild(node);
       list.appendChild(list_element);
-
+      console.log(col)
+      console.log(list)
       col.appendChild(list);
+      //adding animations
       $(col).addClass("animated fadeInLeft");
 
     }
