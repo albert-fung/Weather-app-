@@ -126,14 +126,10 @@ switch (icon) {
       break;
   case "snow":
   //white
-  $( background_id).css("background-color","white");
+  $( background_id).css("background-color","grey");
     return icon
     break;
     case "snow":
-    //white
-    $( background_id).css("background-color","white");
-      return icon
-      break;
   default:
   //jade
     $( background_id).css("background-color","#54a0ff");
